@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<title>Hollywood Hunger Games</title>
+
+	    <!-- External Link to jQuery Library -->
+	    <script src="https://code.jquery.com/jquery-3.1.1.js"></script>
+
+	    <!-- External Link to Bootstrap CSS-->
+	    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+
+	    <!-- External Style Sheet -->
+		<link rel="stylesheet" href="assets/css/style.css">	
+
+	</head>
+	<body>
+		<center>
+			<h1>Welcome to the '49ers Great Crystal Rush!</h1>
+			<h4>Here you can search for very valuable gems. But do not get too greedy, we are allowed only a certain amount before we have to stop. Do not get caught going over.</h4>
+			
+			<div class="row">
+				<div class="col-sm-2">
+					<h2>WINS
+						<br><br>
+						<span id="wins">JS</span>
+					</h2>
+				</div>
+				<div class="col-sm-8" id="announcement">
+					<h1>Press New Game To Start This Adventure!</h1>
+					<br>
+					<button onclick="newGame()" id="newGame">New Game</button>	
+				</div>
+				<div class="col-sm-2">
+					<h2>LOSSES
+						<br><br>
+						<span id="losses">JS</span>
+					</h2>
+				</div>
+			</div>
+
+			<div class="container-fluid arena">
+
+				<div class="row">
+					<div class="col-sm-2 right">
+						<h3>Target to collect:</h3>
+					</div>
+					<div class="col-sm-1 left">
+						<h3><span id="target">0</span></h3>
+					</div>
+					<div class="col-sm-6 center">
+						<h2>Crystal Mine</h2>
+					</div>
+					<div class="col-sm-2 right">
+						<h3>Total Collected:</h3>
+					</div>
+					<div class="col-sm-1 left">
+						<h3><span id="collected">0</span></h3>
+					</div>
+				</div>
+
+				<div class="row">
+					<div class="col-sm-2"></div>
+					<div class="col-sm-4 center gem" id="gem1"><img src="assets/media/images/gem1.jpg" class="gemImage" alt="Random Gem"></div>
+					<div class="col-sm-4 center gem" id="gem2"><img src="assets/media/images/gem2.jpg" class="gemImage" alt="Random Gem"></div>
+					<div class="col-sm-2"></div>
+				</div>
+
+				<div class="row spacer"></div>
+				
+				<div class="row">
+					<div class="col-sm-2"></div>
+					<div class="col-sm-4 center gem" id="gem3"><img src="assets/media/images/gem3.jpg" class="gemImage" alt="Random Gem"></div>
+					<div class="col-sm-4 center gem" id="gem4"><img src="assets/media/images/gem4.jpg" class="gemImage" alt="Random Gem"></div>
+					<div class="col-sm-2"></div>
+				</div>
+
+			</div>
+		</center>
+		<!-- External JavaScript File -->
+		<script src="assets/js/script.js"></script>
+	</body>
+</html>

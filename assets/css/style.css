@@ -1,0 +1,30 @@
+body{
+	background-image: url("../media/images/background.jpg");
+	color: #ffffff;
+}
+
+.row{
+	background-color: #272822;
+}
+
+.gemImage{
+	width: 350px;
+	height: 350px;
+}
+
+.gemImage:hover{
+	
+	/*rotate or shake image while they are hovering over the image*/
+}
+
+.spacer{
+	height:50px;
+}
+
+#newGame{
+	color: #000000;
+	background-color: #00ff00;
+	width: 200px;
+	height: 75px;
+	font-size: 30px;
+}
