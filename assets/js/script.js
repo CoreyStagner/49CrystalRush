@@ -6,8 +6,8 @@ var value3 = Math.floor(Math.random() * 10) + 1;
 var value4 = Math.floor(Math.random() * 10) + 1;
 var goal = Math.floor(Math.random() * 100) + 50;
 var score = 0;
-var wins = 0;
-var losses = 0;
+var winCount = 0;
+var lossCount = 0;
 
 var announcement = document.getElementById("announcement");
 var gem1 = document.getElementById("gem1");
@@ -59,80 +59,85 @@ function newGame(){
 	/////////////////////////////////////////////////
 	// Functions
 	/////////////////////////////////////////////////
-}
-
-function updateScreen(){
-	$("#target").text(goal);
-	$("#collected").text(score);
-	$("#wins").text(wins)
-}
-
-function win(){
-	updateScreen();
-	var rematch = confirm("You made your goal!!");
-	if(rematch = true){
-		newGame();
-	};
-}
-
-function lose(){
-	updateScreen();
-	var rematch = confirm("YOU THIEF!! I told you not to go over what you were allowed to dig for.");
-	if(rematch = true){
-		newGame();
 	}
-}
 
-function progress(){
-	updateScreen();
-	if(goal > score){
-		
+	function updateScreen(){
+		$("#target").text(goal);
+		$("#collected").text(score);
+		$("#wins").text(winCount);
+		$("#losses").text(lossCount);
 	}
-	else if(goal === score){
-		win();	
+
+	function win(){
+		updateScreen();
+		var rematch = confirm("You made your goal!!");
+		if(rematch = true){
+			newGame();
+		};
 	}
-	else if(goal < score){
-		lose();
+
+	function lose(){
+		updateScreen();
+		var rematch = confirm("YOU THIEF!! I told you not to go over what you were allowed to dig for.");
+		if(rematch = true){
+			newGame();
+		}
 	}
-}
 
-/////////////////////////////////////////////////
-// Events
-/////////////////////////////////////////////////
-
-$(document).ready(function(){
-	$("#gem1").on("click", function(){
-		console.log("You just clicked Gem1")
-		score += value1;
-		console.log(score)
+	function progress(){
+		if(goal > score){
+			
+		}
+		else if(goal === score){
+			win();
+			winCount++;
+			window.win = win + 1;
+		}
+		else if(goal < score){
+			lose();
+			lossCount++;
+			losses = losses + 1;
+		}
 		updateScreen();
-		progress();
-	});
+	}
 
-	$("#gem2").on("click", function(){
-		console.log("You just clicked Gem2")
-		score += value2;
-		console.log(score)
-		updateScreen();
-		progress();
-	});
+	/////////////////////////////////////////////////
+	// Events
+	/////////////////////////////////////////////////
 
-	$("#gem3").on("click", function(){
-		console.log("You just clicked Gem3")
-		score += value3;
-		console.log(score)
-		updateScreen();
-		progress();
-	});
+	$(document).ready(function(){
+		$("#gem1").on("click", function(){
+			console.log("You just clicked Gem1")
+			score += value1;
+			console.log(score)
+			updateScreen();
+			progress();
+		});
 
-	$("#gem4").on("click", function(){
-		console.log("You just clicked Gem4")
-		score += value4;
-		console.log(score)
-		updateScreen();
-		progress();
-	});
-})
+		$("#gem2").on("click", function(){
+			console.log("You just clicked Gem2")
+			score += value2;
+			console.log(score)
+			updateScreen();
+			progress();
+		});
+
+		$("#gem3").on("click", function(){
+			console.log("You just clicked Gem3")
+			score += value3;
+			console.log(score)
+			updateScreen();
+			progress();
+		});
+
+		$("#gem4").on("click", function(){
+			console.log("You just clicked Gem4")
+			score += value4;
+			console.log(score)
+			updateScreen();
+			progress();
+		});
+	})
 	
 
 	/////////////////////////////////////////////////
